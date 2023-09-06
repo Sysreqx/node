@@ -23,10 +23,10 @@ inquirer.prompt(questions)
         // console.log(answers);
         urlVar = answers.url;
 
-        var qr_svg = qr.image(urlVar, { type: 'svg' });
-        qr_svg.pipe(fs.createWriteStream('i_love_qr.svg'));
+        var qr_svg = qr.image(urlVar);
+        qr_svg.pipe(fs.createWriteStream('i_love_qr.png'));
 
-        var svg_string = qr.imageSync(urlVar, { type: 'svg' });
+        var svg_string = qr.imageSync(urlVar, { type: 'png' });
     });
 
 
